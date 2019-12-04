@@ -1,0 +1,103 @@
+package chapter09;
+/**
+ * Algebra: quadratic equations
+ * Design a class named QuadraticEquation for a quadratic equation ax2 + bx + x = 0. The class contains:
+ * Private data fields a, b, and c that represent three coefficients.
+ * A constructor for the arguments for a, b, and c.
+ * Three getter methods for a, b, and c.
+ * A method named getDiscriminant() that returns the discriminant, which is b2 - 4ac. 
+ * The methods named getRoot1() and getRoot2() for returning two roots of the equation
+ * These methods are useful only if the discriminant is nonnegative. 
+ * Let these methods return 0 if the discriminant is negative. 
+ * Write a test program that prompts the user to enter values for a, b, and c and displays the result based on the discriminant. 
+ * If the discriminant is positive, display the two roots. 
+ * If the discriminant is 0, display the one root. Otherwise, display “The equation has no roots.” 
+ * See Programming Exercise 3.1 for sample runs.
+ */
+
+import java.util.Scanner;
+
+public class Exercise_10 
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter a value for a , b and c: ");
+		double a = input.nextDouble();
+		double b = input.nextDouble();
+		double c = input.nextDouble();
+		
+		QuadraticEquation  equation1 = new QuadraticEquation(a , b ,c);
+		
+		if (equation1.getDiscriminant() > 0)
+			System.out.println("Root 1: " + equation1.getRoot1() + "\nRoot 2: " + equation1.getRoot2());
+		if(equation1.getDiscriminant() == 0)
+			System.out.println("Root 1: " + equation1.getRoot1());
+		if(equation1.getDiscriminant() < 0)
+			System.out.println("The equation has no roots.");
+		input.close();
+	}
+}
+
+class QuadraticEquation
+{
+	private double a , b , c;
+	
+	public QuadraticEquation(double a ,double b , double c)
+	{
+		this.setA(a);
+		this.setB(b);
+		this.setC(c);
+	}
+	
+	public double getDiscriminant()
+	{
+		return (Math.pow(getB() , 2) - (4 * a * c));
+	}
+	
+	public double getRoot1()
+	{
+		if (getDiscriminant() >= 0)
+			return (-b + Math.pow(getDiscriminant(), 0.5) / (2 * a));
+		else
+			return 0;
+	}
+	
+	public double getRoot2()
+	{
+		if (getDiscriminant() >= 0)
+			return (-b + Math.pow(getDiscriminant(), 0.5) / (2 * a));
+		else
+			return 0;
+	}
+
+	public double getA()
+	{
+		return a;
+	}
+
+	public void setA(double a)
+	{
+		this.a = a;
+	}
+
+	public double getB()
+	{
+		return b;
+	}
+
+	public void setB(double b)
+	{
+		this.b = b;
+	}
+
+	public double getC()
+	{
+		return c;
+	}
+
+	public void setC(double c) 
+	{
+		this.c = c;
+	}
+}
