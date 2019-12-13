@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Science: day of the week
- * Zeller’s congruence is an algorithm developed by Christian Zeller to calculate the day of the week.
+ * Zellerï¿½s congruence is an algorithm developed by Christian Zeller to calculate the day of the week.
  * Write a program that prompts the user to enter a year, month, and day of the month, 
  * and displays the name of the day of the week.
  * 
@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author Romani Ezzat
  *
  *
- * Exercise_21
+ * Exercise_21.txt
  *
  */
 public class Exercise_21 

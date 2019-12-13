@@ -26,7 +26,7 @@ import java.util.Scanner;
  * @author roman
  *
  *
- * Exercise_21
+ * Exercise_21.txt
  *
  */
 public class Exercise_21 
